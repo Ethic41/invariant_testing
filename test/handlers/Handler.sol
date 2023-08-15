@@ -61,6 +61,10 @@ contract Handler is Test{
     uint256 public ghost_withdrawSum;
 
     function deposit(uint256 amount) public {
+        amount = bound(amount, 0, address(this).balance);
+        _fund(msg.sender, amount);
+
+        vm.prank(msg.sender);
         weth.deposit{value: amount}();
     }
 }
