@@ -45,6 +45,13 @@ contract Handler is Test{
 
     WETH9 public weth;
 
+    uint256 public constant ETH_SUPPLY = 120_500_000 ether;
+
+    modifier createActor() {
+        _actors.add(msg.sender);
+        _;
+    }
+
     constructor(WETH9 _weth) {
         weth = _weth;
         vm.deal(address(this), 10 ether);
