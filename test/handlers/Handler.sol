@@ -11,6 +11,10 @@ import {Test} from "forge-std/Test.sol";
 
 
 contract Handler is Test{
+    using LibAddressSet for AddressSet;
+
+    AddressSet internal _actors;
+
     WETH9 public weth;
 
     constructor(WETH9 _weth) {
