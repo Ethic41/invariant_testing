@@ -54,7 +54,7 @@ contract Handler is Test{
 
     constructor(WETH9 _weth) {
         weth = _weth;
-        vm.deal(address(this), 10 ether);
+        vm.deal(address(this), ETH_SUPPLY);
     }
 
     function deposit(uint256 amount) public {
