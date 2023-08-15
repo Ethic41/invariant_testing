@@ -96,5 +96,12 @@ contract Handler is Test{
         (bool s, ) = to.call{value: amount}("");
         require(s, "fund() failed!");
     }
+
+    function actors() external view returns (address[] memory){
+        return _actors.addrs;
+    }
+
+    receive() external payable{}
+
 }
 
