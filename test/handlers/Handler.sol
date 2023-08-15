@@ -57,6 +57,9 @@ contract Handler is Test{
         vm.deal(address(this), ETH_SUPPLY);
     }
 
+    uint256 public ghost_depositSum;
+    uint256 public ghost_withdrawSum;
+
     function deposit(uint256 amount) public {
         weth.deposit{value: amount}();
     }
